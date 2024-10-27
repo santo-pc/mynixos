@@ -7,6 +7,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./modules
     ];
 
   # Bootloader.
@@ -50,8 +51,6 @@
     displayManager.defaultSession = "none+i3";
     displayManager.lightdm.enable = true;
     displayManager.autoLogin.enable = true;
-    displayManager.autoLogin.user = "san";
-    #videoDrivers = ["amdgpu-pro"];
   };
 
 
@@ -70,17 +69,6 @@
     pulse.enable = true;
   };
 
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.san = {
-    isNormalUser = true;
-    description = "san";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [
-      firefox
-    #  thunderbird
-    ];
-  };
 
   environment.systemPackages = with pkgs; [
     vim
