@@ -120,15 +120,15 @@
     shellAliases = {
       ll = "ls -l";
       ls = "ls -la";
-      update = "sudo nixos-rebuild switch";
     };
     history = {
       size = 10000;
       path = "${config.xdg.dataHome}/zsh/history";
     };
+
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "thefuck" ];
+      plugins = [ "git"];
       theme = "robbyrussell";
     };
 
