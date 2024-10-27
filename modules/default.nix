@@ -7,7 +7,7 @@
         ./internationalisation.nix
         ./networking.nix
         ./nixsettings.nix
-        ./packages.nix.nix
+        ./packages.nix
         ./services.nix
         ./sound.nix
         ./users.nix

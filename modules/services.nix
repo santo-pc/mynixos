@@ -16,8 +16,8 @@
     xserver = {
       enable = true;
       layout = "us";
+      
       windowManager.i3.enable = true;
-
       displayManager.defaultSession = "none+i3";
       displayManager.lightdm.enable = true;
       displayManager.autoLogin.enable = true;
