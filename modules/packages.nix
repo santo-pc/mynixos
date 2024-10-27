@@ -5,7 +5,7 @@
   environment.systemPackages = with pkgs; [
     bat
     btop
-    eza
+    # eza
     fzf
     git
     gnumake
