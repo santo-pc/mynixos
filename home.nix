@@ -103,22 +103,44 @@
     settings = {
       env.TERM = "xterm-256color";
       font = {
-        size = 12;
+        size = 9;
         draw_bold_text_with_bright_colors = true;
       };
       scrolling.multiplier = 5;
       selection.save_to_clipboard = true;
     };
   };
-
-  programs.bash = {
+  programs.zsh = {
     enable = true;
     enableCompletion = true;
-    # set some aliases, feel free to add more or remove some
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
     shellAliases = {
-      k = "kubectl";
+      ll = "ls -l";
+      ls = "ls -la";
+      update = "sudo nixos-rebuild switch";
     };
+    history = {
+      size = 10000;
+      path = "${config.xdg.dataHome}/zsh/history";
+    };
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" "thefuck" ];
+      theme = "robbyrussell";
+    };
+
   };
+
+  # programs.bash = {
+  #   enable = true;
+  #   enableCompletion = true;
+  #   # set some aliases, feel free to add more or remove some
+  #   shellAliases = {
+  #     k = "kubectl";
+  #   };
+  # };
 
   programs.home-manager.enable = true;
   home.stateVersion = "22.11";
