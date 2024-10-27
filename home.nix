@@ -114,7 +114,7 @@
     enable = true;
     enableCompletion = true;
     # autosuggestion.enable = true;
-    enableSyntaxHighlighting.enable = true;
+    syntaxHighlighting.enable = true;
 
     shellAliases = {
       ll = "ls -l";
