@@ -12,8 +12,6 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    # here is some command line tools I use frequently
-    # feel free to add your own or remove some of them
 
     neofetch
 
@@ -75,6 +73,10 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+
+    #ui
+    polybar
+
   ];
 
   # basic configuration of git, please change to your own
@@ -135,15 +137,6 @@
     };
 
   };
-
-  # programs.bash = {
-  #   enable = true;
-  #   enableCompletion = true;
-  #   # set some aliases, feel free to add more or remove some
-  #   shellAliases = {
-  #     k = "kubectl";
-  #   };
-  # };
 
   programs.home-manager.enable = true;
   home.stateVersion = "22.11";
