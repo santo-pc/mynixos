@@ -21,6 +21,7 @@
       displayManager.defaultSession = "none+i3";
       displayManager.lightdm.enable = true;
       displayManager.autoLogin.enable = true;
+      displayManager.autoLogin.user = san;
     };
   };
 }
