@@ -87,8 +87,9 @@
     userEmail = "sapalacio2@gmail.com";
   };
 
-  # starship - an customizable prompt for any shell
-  programs.starship = {
+
+   wayland.windowManager.hyprland.enable = true;
+   programs.starship = {
     enable = true;
     # custom settings
     settings = {
@@ -98,8 +99,6 @@
       line_break.disabled = true;
     };
   };
-
-  # alacritty - a cross-platform, GPU-accelerated terminal emulator
   programs.alacritty = {
     enable = true;
     # custom settings
