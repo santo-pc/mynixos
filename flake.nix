@@ -2,10 +2,10 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-22.11";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
@@ -45,7 +45,7 @@
 
       modules = [
       {
-        # wayland.windowManager.hyprland = {
+       # wayland.windowManager.hyprland = {
         #   enable = true;
         #   package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
         # };
