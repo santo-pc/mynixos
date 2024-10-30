@@ -13,6 +13,11 @@
     picom.enable = true;
     openssh.enable = true;
     spice-vdagentd.enable = true;
+    displayManager ={
+      defaultSession = "none+i3";
+      autoLogin.enable = true;
+      autoLogin.user = "san";
+    }
     xserver = {
       enable = true;
       xkb.layout = "us";
@@ -21,10 +26,10 @@
       windowManager.i3.package = pkgs.i3-gaps;
 
       displayManager = {
-        defaultSession = "none+i3";
+        # defaultSession = "none+i3";
         lightdm.enable = true;
-        autoLogin.enable = true;
-        autoLogin.user = "san";
+        # autoLogin.enable = true;
+        # autoLogin.user = "san";
       };
     };
   };
