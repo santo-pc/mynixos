@@ -3,7 +3,7 @@
 {
   documentation.nixos.enable = false;
   nixpkgs.config.allowUnfree = true;
-  programs.zsh.enable = tru;
+  programs.zsh.enable = true;
   nix = {
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
