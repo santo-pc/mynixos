@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  fonts.fonts = with pkgs; [
+  fonts.packagest = with pkgs; [
     font-awesome 
     jetbrains-mono
     noto-fonts

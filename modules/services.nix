@@ -15,14 +15,14 @@
     spice-vdagentd.enable = true;
     xserver = {
       enable = true;
-      layout = "us";
+      xkb.layout = "us";
       
       windowManager.i3.enable = true;
       windowManager.i3.package = pkgs.i3-gaps;
 
       displayManager.defaultSession = "none+i3";
       displayManager.lightdm.enable = true;
-      displayManager.autoLogin.enable = true;
+      displayManager.autoLogin = true;
       displayManager.autoLogin.user = "san";
     };
   };
