@@ -20,10 +20,12 @@
       windowManager.i3.enable = true;
       windowManager.i3.package = pkgs.i3-gaps;
 
-      displayManager.defaultSession = "none+i3";
-      displayManager.lightdm.enable = true;
-      displayManager.autoLogin = true;
-      displayManager.autoLogin.user = "san";
+      displayManager: {
+        defaultSession = "none+i3";
+        lightdm.enable = true;
+        autoLogin.enabled = true;
+        autoLogin.user = "san";
+      };
     };
   };
 }
