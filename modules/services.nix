@@ -17,7 +17,8 @@
       defaultSession = "none+i3";
       autoLogin.enable = true;
       autoLogin.user = "san";
-    }
+    };
+
     xserver = {
       enable = true;
       xkb.layout = "us";
