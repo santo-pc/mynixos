@@ -20,9 +20,6 @@
     };
     
     programs.hyprland.enable = true; # enable Hyprland
-    environment.systemPackages = [
-      pkgs.kitty # required for the default Hyprland config
-    ];
 
     xserver = {
       enable = true;
