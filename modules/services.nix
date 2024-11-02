@@ -19,7 +19,7 @@
       autoLogin.user = "san";
     };
     
-    programs.hyprland.enable = true; # enable Hyprland
+    # programs.hyprland.enable = true; # enable Hyprland
 
     xserver = {
       enable = true;

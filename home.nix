@@ -88,7 +88,6 @@
   };
 
 
-   wayland.windowManager.hyprland.enable = true;
    programs.starship = {
     enable = true;
     # custom settings
@@ -136,6 +135,7 @@
 
   };
 
+  wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     bind =
