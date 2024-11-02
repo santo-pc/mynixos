@@ -15,7 +15,6 @@
     libsForQt5.qt5.qtsvg
     neofetch
     neovim
-    kitty # required for the default Hyprland config
     ripgrep
     tldr
     unzip
