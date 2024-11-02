@@ -20,7 +20,7 @@
   in
   {
     nixosConfigurations = {
-      nixos = lib.nixosSystem {
+      nixos = lib.nixosSystem rec {
         inherit system;
 
         specialArgs = {
