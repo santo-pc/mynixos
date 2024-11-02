@@ -22,36 +22,25 @@
     nixosConfigurations = {
       nixos = lib.nixosSystem {
         inherit system;
-        modules = [
-          ./configuration.nix
 
+        specialArgs = {
+          inherit pkgs-unstable;
+          inherit hyprland;
+        };
+
+        modules = [
+            ./configuration.nix
+            hyprland.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.san = import ./home.nix;
-
+              home-manager.extraSpecialArgs = specialArgs;
             }
         ];
-        specialArgs = {
-          inherit pkgs-unstable;
-        };
 
       };
-    };
-
-    homeConfigurations."san@nixos" = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
-
-      modules = [
-      {
-       wayland.windowManager.hyprland = {
-          enable = true;
-          package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-          portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-        };
-      }
-      ];
     };
   };
 }
