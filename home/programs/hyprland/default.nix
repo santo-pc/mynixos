@@ -15,4 +15,4 @@
     enable = true;
     systemdIntegration = true;
   }
-}
+};
