@@ -1,7 +1,7 @@
 {
   imports = [
     # ./alacritty
-    ./hypr
+    ./hyprland
     # ./kitty
     # ./rofi
     # ./waybar
