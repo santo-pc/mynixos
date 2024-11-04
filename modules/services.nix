@@ -3,12 +3,6 @@
 {
   services = {
 
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
     dbus.enable = true;
     picom.enable = true;
     openssh.enable = true;
@@ -19,7 +13,6 @@
       autoLogin.user = "san";
     };
     
-    # programs.hyprland.enable = true; # enable Hyprland
 
     xserver = {
       enable = true;

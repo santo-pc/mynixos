@@ -159,7 +159,7 @@
               "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
               ]
               )
-            9)
+            )
          );
   };
 
