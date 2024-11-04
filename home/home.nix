@@ -11,10 +11,10 @@
     # ./themes
   ];
 
-  # xresources.properties = {
-  #   "Xcursor.size" = 16;
-  #   "Xft.dpi" = 172;
-  # };
+  xresources.properties = {
+    "Xcursor.size" = 16;
+    "Xft.dpi" = 172;
+  };
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
@@ -159,7 +159,7 @@
               "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
               ]
               )
-            )
+            9)
          );
   };
 
