@@ -11,10 +11,6 @@
       defaultSession = "none+i3";
       autoLogin.enable = true;
       autoLogin.user = "san";
-      sddm.settings = {
-        enable = true;
-
-      };
     };
     
 
