@@ -11,6 +11,10 @@
       defaultSession = "none+i3";
       autoLogin.enable = true;
       autoLogin.user = "san";
+      sddm.settings = {
+        enable = true;
+
+      };
     };
     
 
@@ -24,9 +28,12 @@
 
       displayManager = {
         # defaultSession = "none+i3";
-        lightdm.enable = true;
+        # lightdm.enable = true;
         # autoLogin.enable = true;
         # autoLogin.user = "san";
+        sddm.enable = true;
+        sddm.wayland.enable = true;
+        # sddm.theme = "where_is_my_sddm_theme"; 
       };
     };
   };
