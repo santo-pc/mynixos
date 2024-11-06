@@ -8,9 +8,9 @@
     openssh.enable = true;
     spice-vdagentd.enable = true;
     displayManager ={
-      defaultSession = "none+i3";
-      autoLogin.enable = true;
-      autoLogin.user = "san";
+      # defaultSession = "none+i3";
+      # autoLogin.enable = true;
+      # autoLogin.user = "san";
     };
     
 
