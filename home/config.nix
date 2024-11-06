@@ -1,5 +1,5 @@
 let 
-  configDir = .config;
+  configDir = ./config;
 in
 {
   home.file = {
