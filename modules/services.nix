@@ -18,7 +18,7 @@
       enable = true;
       xkb.layout = "us";
       
-      windowManager.i3.enable = false;
+      windowManager.i3.enable = true;
       windowManager.i3.package = pkgs.i3-gaps;
       # windowManager.hyprland.enable = true;
 
