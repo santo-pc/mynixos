@@ -3,6 +3,7 @@
 {
   home.username = "san";
   home.homeDirectory = "/home/san";
+  home-manager.backupFileExtension = true;
   imports = [
     hyprland.homeManagerModules.default
     #./environment
