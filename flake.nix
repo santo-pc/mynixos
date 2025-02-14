@@ -35,11 +35,13 @@
         specialArgs = {
           inherit pkgs-unstable;
           inherit hyprland;
+          inherit inputs;
         };
 
         modules = [
             ./configuration.nix
-            hyprland.nixosModules.default
+            # hyprland.nixosModules.default
+         
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
