@@ -21,11 +21,11 @@
   };
 
   outputs = { nixpkgs, nixpkgs-unstable, home-manager, hyprland, ... }@inputs:
-    let
+  let
     lib = nixpkgs.lib;
-  system = "x86_64-linux";
-  pkgs = nixpkgs.legacyPackages.${system};
-  pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+    pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
   in
   {
     nixosConfigurations = {
