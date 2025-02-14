@@ -7,15 +7,19 @@
 	  openssh.enable = true;
     spice-vdagentd.enable = true;
 
+		displayManager = {
+		  sddm.enable = true;
+      sddm.theme = "${import ./sddm-theme.nix { inherit pkgs; }}";
+		};
+
 	  xserver = {
 		  enable = true;
-		  layout = "us, ru, ge";
-        xkbOptions = "grp:alt_shift_toggle, caps:swapescape";
+      xkb.options = "grp:alt_shift_toggle, caps:swapescape";
 
-		  displayManager = {
-		  	sddm.enable = true;
-        sddm.theme = "${import ./sddm-theme.nix { inherit pkgs; }}";
-		  };
+		  # displayManager = {
+		  # 	sddm.enable = true;
+		  #     sddm.theme = "${import ./sddm-theme.nix { inherit pkgs; }}";
+		  # };
 	  };
   };
 }
