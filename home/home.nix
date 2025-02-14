@@ -141,7 +141,7 @@
 
   };
 
-  wayland.windowManager.hyprland.enable = true;
+  # wayland.windowManager.hyprland.enable = true;
 
   programs.home-manager.enable = true;
   home.stateVersion = "22.11";
