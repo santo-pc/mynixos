@@ -25,13 +25,8 @@
     wlogout
     wl-clipboard
     wofi
-    # qt5.qtwayland
-    # qt6.qtwayland
-    # libsForQt5.plasma-framework
     waybar
-    # (waybar.overrideAttrs (oldAttrs: {
-    #   mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    # }))
+    nwg-look
   ];
 }
 
