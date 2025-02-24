@@ -2,7 +2,7 @@
 { pkgs, ... }:
 
 {
-  sound.enable = true;
+  # sound.enable = true;
   security.rtkit.enable = true;
   hardware.pulseaudio.enable = false;
 
@@ -12,7 +12,7 @@
 		alsa.support32Bit = true;
 		pulse.enable = true;
 		jack.enable = true;
-        wireplumber.enable = true;
+    wireplumber.enable = true;
   };
 
   environment.systemPackages = with pkgs; [

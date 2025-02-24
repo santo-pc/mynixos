@@ -9,6 +9,7 @@
         ./networking.nix
         ./nixsettings.nix
         ./packages.nix
+        # ./programs.nix
         ./services.nix
         ./sound.nix
         ./users.nix

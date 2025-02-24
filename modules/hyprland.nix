@@ -1,24 +1,38 @@
-{ config, pkgs, ... }:
+{ pkgs, lib ,inputs, ... }:
 
 {
-    programs.hyprland = {
-        enable = true;
-    };
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+  };
 
-    environment.systemPackages = with pkgs; [
-      hyprpaper
-      kitty
-      libnotify
-      mako
-      qt5.qtwayland
-      qt6.qtwayland
-      swayidle
-      swaylock-effects
-      wlogout
-      wl-clipboard
-      wofi
-      waybar
-    ];
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSOS = 1;
+    NIXOS_OZONE_WL = "1";
+  };
+
+  environment.systemPackages = with pkgs; [
+    hyprpaper
+    libnotify
+    mako
+    swww
+    dolphin
+    wofi
+    qt5.qtwayland
+    qt6.qtwayland
+    swayidle
+    swaylock-effects
+    wlogout
+    wl-clipboard
+    wofi
+    # qt5.qtwayland
+    # qt6.qtwayland
+    # libsForQt5.plasma-framework
+    waybar
+    # (waybar.overrideAttrs (oldAttrs: {
+    #   mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    # }))
+  ];
 }
 
 

@@ -27,6 +27,12 @@
     xdg-desktop-portal-wlr
     zip
     zoxide
+    gcc
+    stylua
+    pyright
+    ruff
+    tmux
+
   ];
 }
 

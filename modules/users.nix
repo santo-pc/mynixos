@@ -8,11 +8,8 @@
       "wheel"
       "networkmanager"
       "docker"
+      "input"
     ]; 
-
-    packages = with pkgs; [
-      firefox
-    ];
   };
 }
 

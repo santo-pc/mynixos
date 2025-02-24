@@ -1,13 +1,15 @@
 { config, pkgs, ... }: 
 
 {
- hardware = {
-    bluetooth.enable = true;
+  hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
 
-	opengl = {
-		enable = true;
-		driSupport = true;
-		driSupport32Bit = true;
-	};
- };
+    nvidia.modesetting.enable = true;
+    opengl = {
+      enable = true;
+    };
+  };
 }
