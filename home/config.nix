@@ -4,13 +4,13 @@ let
 in
 {
   home.file = {
-    ".config/nvim"= {
+    ".config/nvim" = {
       enable = true;
       recursive = true;
-      source = config.lib.file.mkOutOfStoreSymlink "${configDir}/nvim";
+      # needed to write lock files when updating for instance
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/mynixos/home/config/nvim";
     };
 
-    # ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${configDir}/nvim";
     ".config/nvim-kickstart".source = "${configDir}/nvim-kickstart";
     ".config/alacritty".source = "${configDir}/alacritty";
     ".config/i3".source = "${configDir}/i3";
