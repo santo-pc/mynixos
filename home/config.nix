@@ -17,5 +17,6 @@ in
     ".config/hypr".source = "${configDir}/hypr";
     ".config/waybar".source = "${configDir}/waybar";
     ".config/wofi".source = "${configDir}/wofi";
+    ".config/mako".source = "${configDir}/mako";
   };
 }
