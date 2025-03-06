@@ -13,6 +13,8 @@
       # Needed for Rancher 
       DOCKER_HOST="unix://$HOME/.rd/docker.sock";
       TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE="/var/run/docker.sock";            
+      XCURSER_THEME="Bibata-Original-Classic";
+      
     };
 
     shellAliases = {

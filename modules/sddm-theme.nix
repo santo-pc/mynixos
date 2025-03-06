@@ -1,12 +1,12 @@
 { pkgs }:
 
 pkgs.stdenv.mkDerivation {
-    name = "sddm-theme";
+    name = "minimalist-sddm-theme";
     src = pkgs.fetchFromGitHub {
-        owner = "MarianArlt";
-        repo = "kde-plasma-chili";
-        rev = "a371123959676f608f01421398f7400a2f01ae06";
-        sha256 = "sha256-fWRf96CPRQ2FRkSDtD+N/baZv+HZPO48CfU5Subt854=";
+        owner = "santo-pc";
+        repo = "minimalist-sddm-theme";
+        rev = "e98acba14e5ee191b7007f240aca29e7d3efeb0";
+        sha256 = "sha256-kPd0wavtinaFSjqacF6U1p9qxncfbLMv9IW5p3rtN1A=";
     };
     installPhase = ''
         mkdir -p $out
