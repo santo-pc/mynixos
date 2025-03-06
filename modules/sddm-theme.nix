@@ -5,7 +5,7 @@ pkgs.stdenv.mkDerivation {
     src = pkgs.fetchFromGitHub {
         owner = "santo-pc";
         repo = "minimalist-sddm-theme";
-        rev = "e98acba14e5ee191b7007f240aca29e7d3efeb0";
+        rev = "1478e8c1f3f69f61a70cac15c462362603d07cb5";
         sha256 = "sha256-kPd0wavtinaFSjqacF6U1p9qxncfbLMv9IW5p3rtN1A=";
     };
     installPhase = ''
