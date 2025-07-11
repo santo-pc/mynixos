@@ -5,9 +5,9 @@
   home.homeDirectory = "/home/san";
   imports = [
     ./programs
-    ./config.nix
+    ./dotfiles
+    ./shell
     ./java.nix
-    ./shell.nix
     ./tmux.nix
   ];
 
@@ -19,16 +19,19 @@
     kitty 
     vscode
     alacritty
+    ghostty
     maven
     python3
     nodejs
     cargo 
     rustc
+    rustfmt
+    # rust-analyzer 
     go
     redis
     openssl_3
     ncpamixer
-
+    lua-language-server
     # Utils
     ripgrep
     neofetch

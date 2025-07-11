@@ -1,6 +1,6 @@
 { config, ... }:
 let 
-  configDir = ./config;
+  configDir = ./dotfiles;
 in
 {
   home.file = {
@@ -8,10 +8,16 @@ in
       enable = true;
       recursive = true;
       # needed to write lock files when updating for instance
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/mynixos/home/config/nvim";
+      source = config.lib.file.mkOutOfStoreSymlink "${configDir}/nvim";
     };
 
-    ".config/nvim-kickstart".source = "${configDir}/nvim-kickstart";
+    ".config/santi-nvim" = {
+      enable = true;
+      recursive = true;
+      # needed to write lock files when updating for instance
+      source = config.lib.file.mkOutOfStoreSymlink "${configDir}/santi-nvim";
+    };
+
     ".config/alacritty".source = "${configDir}/alacritty";
     ".config/i3".source = "${configDir}/i3";
     ".config/hypr".source = "${configDir}/hypr";

@@ -13,12 +13,6 @@ vim.api.nvim_create_autocmd("FileType", {
 
 return {
 
-  -- {
-  --   "sainnhe/gruvbox-material",
-  -- },
-  -- {
-  --   "snacks.nvim", enabled = false
-  -- },
   {
     "folke/tokyonight.nvim",
     lazy = true,
@@ -30,7 +24,10 @@ return {
       colorscheme = "tokyonight",
     },
   },
+
   -- disabling unused plugins
+  { "williamboman/mason-lspconfig.nvim", enabled = false },
+  { "williamboman/mason.nvim", enabled = false },
   { "folke/trouble.nvim", enabled = false },
   { "akinsho/bufferline.nvim", enabled = false },
   { "folke/flash.nvim", enabled = false },

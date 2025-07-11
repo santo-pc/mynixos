@@ -12,6 +12,8 @@
     ];
   };
 
+  programs.nix-ld.enable = true;
+  
   programs = {
     hyprland = {
       enable = true;
@@ -28,6 +30,16 @@
         enable = true;
         enableSSHSupport = true;
       };
+    };
+
+    # Needed to run dynamically linked executables 
+    # https://nix.dev/guides/faq#how-to-run-non-nix-executables
+    nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+      # Add any missing dynamic libraries for unpackaged programs
+        rpc
+      ];
     };
 
   };

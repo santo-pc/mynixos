@@ -16,6 +16,7 @@
     libsForQt5.plasma-framework   
     neofetch
     neovim
+    rust-analyzer
     ripgrep
     tldr
     unzip

@@ -1,4 +1,6 @@
+
 { config, pkgs, ... }:
+
 {
 
   programs.zsh = {
@@ -10,9 +12,6 @@
       ZSH_THEME="typewritten";
       TYPEWRITTEN_PROMPT_LAYOUT="pure";
       TYPEWRITTEN_SYMBOL="$";
-      # Needed for Rancher 
-      DOCKER_HOST="unix://$HOME/.rd/docker.sock";
-      TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE="/var/run/docker.sock";            
       XCURSER_THEME="Bibata-Original-Classic";
       
     };
@@ -22,6 +21,7 @@
       ls = "eza -la";
       k = "kubectl";
       # Fuzzy open project with idea
+      "santi-nvim" = "NVIM_APPNAME=\"santi-nvim\" nvim";
       oidea="fd . '/Users/s.palacio-caro/programming/repository' --type d --hidden --exclude .git  --max-depth 1 | fzf | xargs -I {} idea {}";
     };
 
@@ -62,19 +62,9 @@
       # Zoxide setup
       eval "$(zoxide init zsh)"
 
-      alias nvim-kickstart="NVIM_APPNAME='nvim-kickstart' nvim"
+      alias santi-nvim="NVIM_APPNAME='santi-nvim' nvim"
 
     '';
   };
-
-  # home.file.".oh-my-zsh/custom/themes/typewritten" = {
-  #   source = fetchFromGitHub {
-  #     owner = "reobin";
-  #     repo = "typewritten";
-  #     rev = "main"; # Change to a specific commit for stability
-  #     sha256 = "sha256-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"; # Replace with correct hash
-  #   };
-  #   recursive = true;
-  # };
 
 }
