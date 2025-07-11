@@ -8,7 +8,6 @@
     ./dotfiles
     ./shell
     ./java.nix
-    ./tmux.nix
   ];
 
   # Packages that should be installed to the user profile.
