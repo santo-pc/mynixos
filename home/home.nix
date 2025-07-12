@@ -1,8 +1,10 @@
-{ config, pkgs, hyprland, ... }:
-
+{ config, pkgs, hyprland, globals, home-manager,  ... }:
+let
+in
 {
   home.username = "san";
   home.homeDirectory = "/home/san";
+
   imports = [
     ./programs
     ./dotfiles
@@ -49,20 +51,17 @@
     unzip
     p7zip
     gh          # github ctl
-
   ];
 
   programs.firefox = {
     enable = true;
-
   };
 
-# basic configuration of git, please change to your own
-  programs.git = {
-    enable = true;
-    userName = "Santiago Palacio";
-    userEmail = "sapalacio2@gmail.com";
-  };
+   programs.git = {
+     enable = true;
+     userName = globals.user.gitUserName;
+     userEmail = globals.user.gitEmail;
+   };
 
   home.pointerCursor = {
     gtk.enable = true;
@@ -74,5 +73,4 @@
   programs.kitty.enable = true; 
   programs.home-manager.enable = true;
   home.stateVersion = "24.11";
-
 }

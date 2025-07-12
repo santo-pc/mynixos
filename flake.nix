@@ -26,6 +26,7 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
     pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+    globals = import ./globals.nix;
   in
   {
     nixosConfigurations = {
@@ -36,6 +37,7 @@
           inherit pkgs-unstable;
           inherit hyprland;
           inherit inputs;
+          inherit globals;
         };
 
         modules = [
@@ -46,6 +48,7 @@
               home-manager.useUserPackages = true;
               home-manager.users.san = import ./home/home.nix;
               home-manager.extraSpecialArgs = specialArgs;
+              home-manager.backupFileExtension = "backup";
             }
         ];
 

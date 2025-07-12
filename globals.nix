@@ -1,8 +1,8 @@
 {
-  useData = {
+  user = {
     gitUserName = "santo";
-    gitUserEmail = "sapalacio2@gmail.com";
-    homeDirectory = "~/";
-    homeDirectory = "~/mynixos/";
+    gitEmail = "sapalacio2@gmail.com";
+    homeDirectory = /home/san;
+    nixConfigDirectory = /home/san/mynixos;
   };
 }

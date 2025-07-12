@@ -1,0 +1,5 @@
+font-size = 15
+font-family="JetBrainsMono Nerd Font"
+theme = "tokyonight_night"
+shell-integration-features=title
+

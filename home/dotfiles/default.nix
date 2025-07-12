@@ -1,28 +1,26 @@
 { config, ... }:
-let 
-  configDir = ./dotfiles;
-in
 {
   home.file = {
     ".config/nvim" = {
       enable = true;
       recursive = true;
       # needed to write lock files when updating for instance
-      source = config.lib.file.mkOutOfStoreSymlink "${configDir}/nvim";
+      source = config.lib.file.mkOutOfStoreSymlink ./nvim;
     };
 
     ".config/santi-nvim" = {
       enable = true;
       recursive = true;
       # needed to write lock files when updating for instance
-      source = config.lib.file.mkOutOfStoreSymlink "${configDir}/santi-nvim";
+      source = config.lib.file.mkOutOfStoreSymlink ./santi-nvim;
     };
 
-    ".config/alacritty".source = "${configDir}/alacritty";
-    ".config/i3".source = "${configDir}/i3";
-    ".config/hypr".source = "${configDir}/hypr";
-    ".config/waybar".source = "${configDir}/waybar";
-    ".config/wofi".source = "${configDir}/wofi";
-    ".config/mako".source = "${configDir}/mako";
+    ".config/alacritty".source = ./alacritty;
+    ".config/i3".source = ./i3;
+    ".config/hypr".source = ./hypr;
+    ".config/waybar".source = ./waybar;
+    ".config/wofi".source = ./wofi;
+    ".config/mako".source = ./mako;
+    ".config/ghostty".source = ./ghostty;
   };
 }

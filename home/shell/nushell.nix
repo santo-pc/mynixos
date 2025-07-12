@@ -1,15 +1,8 @@
 { pkgs, ... }:
 let 
-  globals = import ../globals.nix;
   zoxideInit = pkgs.zoxide;
 in
 {
-  # basic configuration of git, please change to your own
-   programs.git = {
-     enable = true;
-     userName = globals.gitUserName;
-     userEmail = globals.gitEmail;
-   };
 
   programs = {
     nushell = { 
@@ -24,7 +17,7 @@ in
       configFile.text = ''
         source ~/.zoxide.nu
         def oidea [] {
-           fd . '${globals.homeDirectory}/programming/repository' --type d --hidden --exclude .git  --max-depth 1 -a 
+           fd . '$HOME/programming/repository' --type d --hidden --exclude .git  --max-depth 1 -a 
            | fzf 
            | lines  
            | get 0 
@@ -62,7 +55,7 @@ in
         }
         $env.PATH = ($env.PATH | 
           split row (char esep) |
-          prepend ${globals.homeDirectory}/.apps |
+          prepend $HOME/.apps |
           append /usr/bin/env
         )
         zoxide init nushell | save -f ~/.zoxide.nu
@@ -75,8 +68,8 @@ in
         vim = "neovim";
         kcontext-all = "kubectl config get-contexts";
         kcontext-current = "kubectl config current-context";
-        mnix-rebuild = "nix run nix-darwin -- switch --flake ${globals.nixConfigDirectory} --show-trace"; 
-        mnix-update = "sh ${globals.nixConfigDirectory}/scripts/update-system.sh";
+        mnix-rebuild = "nix run nix-darwin -- switch --flake $HOME/mynixos/ --show-trace"; 
+        mnix-update = "sh $HOME/mynixos/scripts/update-system.sh";
       };
 
     };
