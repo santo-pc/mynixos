@@ -72,35 +72,46 @@ return {
       },
     },
   },
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-    opts = {
 
-      options = {
-        section_separators = { left = "", right = "" },
-        component_separators = { left = "", right = "" },
-      },
-      sections = {
-        lualine_c = {
-          LazyVim.lualine.root_dir(),
-          {
-            "diagnostics",
-            -- symbols = {
-            --   error = icons.diagnostics.Error,
-            --   warn = icons.diagnostics.Warn,
-            --   info = icons.diagnostics.Info,
-            --   hint = icons.diagnostics.Hint,
-            -- },
-          },
-        },
-        lualine_z = {
-          function()
-            return ""
-          end,
-        },
-        lualine_x = { "encoding", "fileformat", "filetype" },
+  "sschleemilch/slimline.nvim",
+  opts = {
+    lazy = false,
+    style = "fg",
+    configs = {
+      mode = {
+        verbose = true,
       },
     },
   },
+  -- {
+  --   "nvim-lualine/lualine.nvim",
+  --   event = "VeryLazy",
+  --   opts = {
+  --
+  --     options = {
+  --       section_separators = { left = "", right = "" },
+  --       component_separators = { left = "", right = "" },
+  --     },
+  --     sections = {
+  --       lualine_c = {
+  --         LazyVim.lualine.root_dir(),
+  --         {
+  --           "diagnostics",
+  --           -- symbols = {
+  --           --   error = icons.diagnostics.Error,
+  --           --   warn = icons.diagnostics.Warn,
+  --           --   info = icons.diagnostics.Info,
+  --           --   hint = icons.diagnostics.Hint,
+  --           -- },
+  --         },
+  --       },
+  --       lualine_z = {
+  --         function()
+  --           return ""
+  --         end,
+  --       },
+  --       lualine_x = { "encoding", "fileformat", "filetype" },
+  --     },
+  --   },
+  -- },
 }

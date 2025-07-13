@@ -8,6 +8,7 @@
 
     # Set default terminal and true color
     extraConfig = ''
+      set-option -g default-shell /etc/profiles/per-user/san/bin/nu
       set -g default-terminal "$TERM"
       set -ag terminal-overrides ",$TERM:Tc"
 
@@ -34,6 +35,12 @@
       bind -n C-h select-pane -L
       bind -n C-l select-pane -R
 
+      # Copy mode
+      setw -g mode-keys vi
+      # bind-key -t vi-copy 'v' begin-selection     # Begin selection in copy mode.
+      # bind-key -t vi-copy 'C-v' rectangle-toggle  # Begin selection in copy mode.
+      # bind-key -t vi-copy 'y' copy-selection      # Yank selection in copy mode.
+      #
       # Status bar adjustments
       set -g status-right ""
       set -g status-right-length 0
@@ -41,13 +48,13 @@
       # Window switching
       bind -n M-H previous-window
       bind -n M-L next-window
+
       # Icon styles
       set -g @tokyo-night-tmux_terminal_icon 
       set -g @tokyo-night-tmux_active_terminal_icon 
 
       # No extra spaces between icons
-      set -g @tokyo-night-tmux_window_tidy_icons 0
-  '';
+      set -g @tokyo-night-tmux_window_tidy_icons 0  '';
 
   plugins = with pkgs.tmuxPlugins; [
       sensible

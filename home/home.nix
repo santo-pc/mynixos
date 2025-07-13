@@ -1,6 +1,4 @@
 { config, pkgs, hyprland, globals, home-manager,  ... }:
-let
-in
 {
   home.username = "san";
   home.homeDirectory = "/home/san";
@@ -27,7 +25,6 @@ in
     cargo 
     rustc
     rustfmt
-    # rust-analyzer 
     go
     redis
     openssl_3

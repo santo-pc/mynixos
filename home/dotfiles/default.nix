@@ -2,17 +2,13 @@
 {
   home.file = {
     ".config/nvim" = {
-      enable = true;
-      recursive = true;
-      # needed to write lock files when updating for instance
-      source = config.lib.file.mkOutOfStoreSymlink ./nvim;
+      # needed to write lock files
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/mynixos/home/dotfiles/nvim";
     };
 
-    ".config/santi-nvim" = {
-      enable = true;
-      recursive = true;
-      # needed to write lock files when updating for instance
-      source = config.lib.file.mkOutOfStoreSymlink ./santi-nvim;
+    ".config/lazy-nvim" = {
+      # needed to write lock files
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/mynixos/home/dotfiles/lazy-nvim";
     };
 
     ".config/alacritty".source = ./alacritty;

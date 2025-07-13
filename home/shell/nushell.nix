@@ -17,7 +17,7 @@ in
       configFile.text = ''
         source ~/.zoxide.nu
         def oidea [] {
-           fd . '$HOME/programming/repository' --type d --hidden --exclude .git  --max-depth 1 -a 
+           fd . '$env.HOME/programming/repository' --type d --hidden --exclude .git  --max-depth 1 -a 
            | fzf 
            | lines  
            | get 0 
@@ -26,8 +26,15 @@ in
         def oi [] {
           oidea
         }
-        def santi-nvim [...args] {
+        
+        def lazy-nvim [...args] {
           with-env {NVIM_APPNAME: 'santi-nvim'} {
+            nvim ...$args
+          }
+        }
+
+        def santi-nvim [...args] {
+          with-env {NVIM_APPNAME: 'lazy-nvim'} {
             nvim ...$args
           }
         }
@@ -53,11 +60,6 @@ in
            }
           }
         }
-        $env.PATH = ($env.PATH | 
-          split row (char esep) |
-          prepend $HOME/.apps |
-          append /usr/bin/env
-        )
         zoxide init nushell | save -f ~/.zoxide.nu
         '';
 
@@ -68,8 +70,8 @@ in
         vim = "neovim";
         kcontext-all = "kubectl config get-contexts";
         kcontext-current = "kubectl config current-context";
-        mnix-rebuild = "nix run nix-darwin -- switch --flake $HOME/mynixos/ --show-trace"; 
-        mnix-update = "sh $HOME/mynixos/scripts/update-system.sh";
+        mnix-rebuild = "nix run nix-darwin -- switch --flake $env.HOME/mynixos/ --show-trace"; 
+        mnix-update = "sh $env.HOME/mynixos/scripts/update-system.sh";
       };
 
     };
