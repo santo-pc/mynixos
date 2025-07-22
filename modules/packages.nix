@@ -1,5 +1,5 @@
 
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable,... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -10,10 +10,12 @@
     git
     gnumake
     lm_sensors
-    libsForQt5.qt5.qtquickcontrols2
-    libsForQt5.qt5.qtgraphicaleffects
-    libsForQt5.qt5.qtsvg
-    libsForQt5.plasma-framework   
+    kdePackages.sddm-kcm
+    # qtwayland
+    # libsForQt5.qt5.qtquickcontrols2
+    # libsForQt5.qt5.qtgraphicaleffects
+    # libsForQt5.qt5.qtsvg
+    # libsForQt5.plasma-framework   
     neofetch
     neovim
     rust-analyzer

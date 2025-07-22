@@ -1,4 +1,5 @@
-{ config, pkgs, hyprland, globals, home-manager,  ... }:
+{ config, pkgs, pkgs-unstable, hyprland, globals, home-manager,  ... }:
+
 {
   home.username = "san";
   home.homeDirectory = "/home/san";
@@ -13,8 +14,9 @@
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # DEV
-    jetbrains.idea-ultimate
-    jetbrains.idea-community
+    # jetbrains.idea-ultimate
+    # jetbrains.idea-community
+    pkgs-unstable.neovim
     kitty 
     vscode
     alacritty

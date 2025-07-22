@@ -16,9 +16,9 @@
     libnotify
     mako
     swww
-    dolphin
+    # dolphin
     wofi
-    qt5.qtwayland
+    # qt5.qtwayland
     qt6.qtwayland
     swayidle
     swaylock-effects
