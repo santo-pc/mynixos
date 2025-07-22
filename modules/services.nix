@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-	services.desktopManager.plasma6.enable = true;
+	services.desktopManager.plasma6.enable = false;
 	services.displayManager.sddm.wayland.enable = true;
 	programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.kdePackages.ksshaskpass.out}/bin/ksshaskpass"; 
 
