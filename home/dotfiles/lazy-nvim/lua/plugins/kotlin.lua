@@ -1,8 +1,8 @@
 return {
-  {
-    "williamboman/mason.nvim",
-    opts = { ensure_installed = { "ktlint" } },
-  },
+  -- {
+  --   "williamboman/mason.nvim",
+  --   opts = { ensure_installed = { "ktlint" } },
+  -- },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = { ensure_installed = { "kotlin" } },
@@ -15,12 +15,12 @@ return {
       },
     },
   },
-  {
-    "mfussenegger/nvim-lint",
-    optional = true,
-    dependencies = "williamboman/mason.nvim",
-    opts = {
-      linters_by_ft = { kotlin = { "ktlint" } },
-    },
-  },
+  -- {
+  --   "mfussenegger/nvim-lint",
+  --   optional = true,
+  --   dependencies = "williamboman/mason.nvim",
+  --   opts = {
+  --     linters_by_ft = { kotlin = { "ktlint" } },
+  --   },
+  -- },
 }

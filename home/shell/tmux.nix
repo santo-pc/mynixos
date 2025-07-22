@@ -49,12 +49,7 @@
       bind -n M-H previous-window
       bind -n M-L next-window
 
-      # Icon styles
-      set -g @tokyo-night-tmux_terminal_icon 
-      set -g @tokyo-night-tmux_active_terminal_icon 
-
-      # No extra spaces between icons
-      set -g @tokyo-night-tmux_window_tidy_icons 0  '';
+    '';
 
   plugins = with pkgs.tmuxPlugins; [
       sensible
@@ -62,7 +57,20 @@
       yank
       pain-control
       logging
-      tokyo-night-tmux
+      {
+        plugin = tokyo-night-tmux;
+        extraConfig = ''
+          set -g @tokyo-night-tmux_window_id_style digital
+          set -g @tokyo-night-tmux_pane_id_style hsquare
+          set -g @tokyo-night-tmux_zoom_id_style dsquare
+          # Icon styles
+          set -g @tokyo-night-tmux_terminal_icon 
+          set -g @tokyo-night-tmux_active_terminal_icon 
+
+          # No extra spaces between icons
+          set -g @tokyo-night-tmux_window_tidy_icons 0
+        '';
+      }
     ];
   };
 }

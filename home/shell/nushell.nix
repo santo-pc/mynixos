@@ -14,7 +14,7 @@ in
         ${zoxideInit}/bin/zoxide init nushell | save -f ~/.zoxide.nu
       '';
 
-      configFile.text = ''
+      configFile.text =  ''
         source ~/.zoxide.nu
         def oidea [] {
            fd . '$env.HOME/programming/repository' --type d --hidden --exclude .git  --max-depth 1 -a 
@@ -28,13 +28,13 @@ in
         }
         
         def lazy-nvim [...args] {
-          with-env {NVIM_APPNAME: 'santi-nvim'} {
+          with-env {NVIM_APPNAME: 'lazy-nvim'} {
             nvim ...$args
           }
         }
 
         def santi-nvim [...args] {
-          with-env {NVIM_APPNAME: 'lazy-nvim'} {
+          with-env {NVIM_APPNAME: 'nvim'} {
             nvim ...$args
           }
         }
@@ -88,6 +88,10 @@ in
           };
           character = {
          };
+        format = ''
+        $directory$git_branch
+        $shell$character
+        '';
       };
     };
   };

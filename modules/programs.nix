@@ -12,7 +12,6 @@
     ];
   };
 
-  programs.nix-ld.enable = true;
   
   programs = {
     hyprland = {
@@ -39,6 +38,7 @@
       libraries = with pkgs; [
       # Add any missing dynamic libraries for unpackaged programs
         rpc
+        lua-language-server
       ];
     };
 

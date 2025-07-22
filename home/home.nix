@@ -30,6 +30,8 @@
     openssl_3
     ncpamixer
     lua-language-server
+    lua
+    luarocks
     # Utils
     ripgrep
     neofetch

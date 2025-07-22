@@ -25,6 +25,10 @@ require('lazy').setup({
 
   require 'plugins/slimline',
 
+  require 'plugins/mini-indentscope',
+
+  require 'plugins/indent-blankline',
+
   require 'plugins/gitsigns',
 
   require 'plugins/which-key',
