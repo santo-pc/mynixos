@@ -38,7 +38,7 @@
     };
 
     # Ensure Typewritten is installed
-    initExtra = ''
+    initContent = ''
       ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
       if [[ ! -d "$ZSH_CUSTOM/themes/typewritten" ]]; then
         git clone --depth=1 https://github.com/reobin/typewritten.git "$ZSH_CUSTOM/themes/typewritten"

@@ -7,3 +7,8 @@ progress-color=over #313244
 
 [urgency=high]
 border-color=#fab387
+
+
+default-timeout=500
+# Enable/disable notification timeout.
+ignore-timeout=0

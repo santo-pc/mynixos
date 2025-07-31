@@ -1,16 +1,14 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 let
-    startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-      ${pkgs.waybar}/bin/waybar &
-      ${pkgs.swww}/bin/swww init &
-  
-      sleep 1
-  
-      ${pkgs.swww}/bin/swww img ${./wallpaper.png} &
-    '';
+  startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
+    ${pkgs.waybar}/bin/waybar &
+    ${pkgs.swww}/bin/swww-deamon &
+    sleep 1
+    ${pkgs.swww}/bin/swww img ${./wallpaper.png} &
+  '';
 in
 {
-  imports = [ 
+  imports = [
     ./hyprland-environment.nix
   ];
 

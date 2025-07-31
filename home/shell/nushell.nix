@@ -5,7 +5,7 @@ in
 {
 
   programs = {
-    nushell = { 
+        nushell = { 
       enable = true;
       # The config.nu can be anywhere you want if you like to edit your Nushell with Nu
       # configFile.source = ./.../config.nu;
@@ -16,6 +16,7 @@ in
 
       configFile.text =  ''
         source ~/.zoxide.nu
+        $env.edit-mode = "vi"
         def oidea [] {
            fd . '$env.HOME/programming/repository' --type d --hidden --exclude .git  --max-depth 1 -a 
            | fzf 

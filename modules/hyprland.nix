@@ -1,4 +1,8 @@
-{ pkgs, lib ,inputs, ... }:
+{
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   programs.hyprland = {
@@ -16,9 +20,7 @@
     libnotify
     mako
     swww
-    # dolphin
     wofi
-    # qt5.qtwayland
     qt6.qtwayland
     swayidle
     swaylock-effects
@@ -29,5 +31,3 @@
     nwg-look
   ];
 }
-
-

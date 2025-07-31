@@ -11,7 +11,6 @@
       inputs.nixpkgs.follows = "nixpkgs"; # Use system packages list where available
     };
 
-
     hyprland.url = "github:hyprwm/Hyprland";
 
     sops-nix = {
@@ -21,28 +20,34 @@
 
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, home-manager, hyprland, ... }@inputs:
-  let
-    lib = nixpkgs.lib;
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-    pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
-    globals = import ./globals.nix;
-  in
-  {
-    nixosConfigurations = {
-      nixos-personal = lib.nixosSystem rec {
-        inherit system;
+  outputs =
+    {
+      nixpkgs,
+      nixpkgs-unstable,
+      home-manager,
+      hyprland,
+      ...
+    }@inputs:
+    let
+      lib = nixpkgs.lib;
+      system = "x86_64-linux";
+      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+      globals = import ./globals.nix;
+    in
+    {
+      nixosConfigurations = {
+        nixos-personal = lib.nixosSystem rec {
+          inherit system;
 
-        specialArgs = {
-          inherit pkgs-unstable;
-          inherit hyprland;
-          inherit inputs;
-          inherit globals;
-        };
+          specialArgs = {
+            inherit pkgs-unstable;
+            inherit hyprland;
+            inherit inputs;
+            inherit globals;
+          };
 
-        modules = [
-            ./configuration.nix         
+          modules = [
+            ./configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -51,9 +56,9 @@
               home-manager.extraSpecialArgs = specialArgs;
               home-manager.backupFileExtension = "backup";
             }
-        ];
+          ];
 
+        };
       };
     };
-  };
 }
