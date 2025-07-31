@@ -70,6 +70,7 @@
     unzip
     p7zip
     gh # github ctl
+    libevdev # for setting mouse dps
   ];
 
   programs.firefox = {
