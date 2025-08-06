@@ -38,6 +38,7 @@
     ncpamixer
     blueberry
     impala
+    elixir
 
     # NVIM deps
     stylua
@@ -51,6 +52,7 @@
     tree-sitter
     nixd
     nixfmt-rfc-style
+    elixir-ls
 
     # Utils
     ripgrep

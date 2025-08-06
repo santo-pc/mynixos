@@ -1,12 +1,13 @@
-{ pkgs }:
+{ pkgs, lib, ... }:
 
 pkgs.stdenv.mkDerivation {
   name = "minimalist-sddm-theme";
   src = pkgs.fetchFromGitHub {
     owner = "santo-pc";
     repo = "minimalist-sddm-theme";
-    rev = "11d9984b58735277d92f4702f66341aa0c037764";
-    sha256 = "sha256-kPd0wavtinaFSjqacF6U1p9qxncfbLMv9IW5p3rtN1A=";
+    rev = "b3eeee6eb62daab802cdf3fde888c6035207dbfa";
+    # sha256 = lib.fakeSha256;
+    sha256 = "vBeq+j51QiFO9gec4St21t4rTdiN833R6pL/cMBIK2s=";
   };
   installPhase = ''
     mkdir -p $out

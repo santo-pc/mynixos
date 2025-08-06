@@ -1,11 +1,13 @@
 require 'lsp.configs.clangd'
 require 'lsp.configs.lua_ls'
 require 'lsp.configs.nixd'
+require 'lsp.configs.elixir'
 
 vim.lsp.enable {
   'clangd',
   'lua_ls',
   'nixd',
+  'elixir',
 }
 
 -- don't select the first item from the autocompletion list

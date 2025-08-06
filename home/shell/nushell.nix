@@ -1,22 +1,25 @@
 { pkgs, ... }:
-let 
+let
   zoxideInit = pkgs.zoxide;
 in
 {
 
   programs = {
-        nushell = { 
+    nushell = {
       enable = true;
       # The config.nu can be anywhere you want if you like to edit your Nushell with Nu
       # configFile.source = ./.../config.nu;
-      # for editing directly to config.nu 
+      # for editing directly to config.nu
       envFile.text = ''
         ${zoxideInit}/bin/zoxide init nushell | save -f ~/.zoxide.nu
       '';
 
-      configFile.text =  ''
+      configFile.text = ''
         source ~/.zoxide.nu
-        $env.edit-mode = "vi"
+        $env.config.edit_mode = "vi"
+        $env.PROMPT_INDICATOR_VI_NORMAL = "/V/ "
+        $env.PROMPT_INDICATOR_VI_INSERT = "/I/ "
+
         def oidea [] {
            fd . '$env.HOME/programming/repository' --type d --hidden --exclude .git  --max-depth 1 -a 
            | fzf 
@@ -27,7 +30,7 @@ in
         def oi [] {
           oidea
         }
-        
+
         def lazy-nvim [...args] {
           with-env {NVIM_APPNAME: 'lazy-nvim'} {
             nvim ...$args
@@ -62,7 +65,7 @@ in
           }
         }
         zoxide init nushell | save -f ~/.zoxide.nu
-        '';
+      '';
 
       shellAliases = {
         # ll = "eza -l";
@@ -71,7 +74,7 @@ in
         vim = "neovim";
         kcontext-all = "kubectl config get-contexts";
         kcontext-current = "kubectl config current-context";
-        mnix-rebuild = "nix run nix-darwin -- switch --flake $env.HOME/mynixos/ --show-trace"; 
+        mnix-rebuild = "nix run nix-darwin -- switch --flake $env.HOME/mynixos/ --show-trace";
         mnix-update = "sh $env.HOME/mynixos/scripts/update-system.sh";
       };
 
@@ -80,18 +83,18 @@ in
     carapace.enable = true;
     carapace.enableNushellIntegration = true;
 
-    starship = { 
-        enable = true;
-        settings = {
-          add_newline = true;
-          aws = {
-              disabled = true;
-          };
-          character = {
-         };
+    starship = {
+      enable = true;
+      settings = {
+        add_newline = true;
+        aws = {
+          disabled = true;
+        };
+        character = {
+        };
         format = ''
-        $directory$git_branch
-        $shell$character
+          $directory$git_branch
+          $shell$character
         '';
       };
     };

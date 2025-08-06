@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.kdePackages.ksshaskpass.out}/bin/ksshaskpass";
 
@@ -16,7 +16,7 @@
         # theme = "corners";
         # package = pkgs.lib.mkForce pkgs.libsForQt5.sddm;
         # extraPackages = pkgs.lib.mkForce [ pkgs.libsForQt5.qt5.qtgraphicaleffects ];
-        # theme = "${import ./sddm-theme.nix { inherit pkgs; }}";
+        theme = "${import ./sddm-theme.nix { inherit pkgs lib; }}";
       };
     };
 
