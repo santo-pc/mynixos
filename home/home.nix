@@ -14,6 +14,7 @@
     ./dotfiles
     ./shell
     ./java.nix
+    ./tmux
   ];
 
   # Packages that should be installed to the user profile.
@@ -36,8 +37,8 @@
     redis
     openssl_3
     ncpamixer
-    blueberry
     impala
+    erlang
     elixir
 
     # NVIM deps
@@ -51,12 +52,12 @@
     nil # nix lsp
     tree-sitter
     nixd
-    nixfmt-rfc-style
+    nixfmt
     elixir-ls
 
     # Utils
     ripgrep
-    neofetch
+    fastfetch
     jq # A lightweight command-line JSON processor
     yq-go # yaml processor
     fzf # A command-line fuzzy finder
@@ -71,7 +72,7 @@
     xz
     unzip
     p7zip
-    gh # github ctl
+    gh # xgithub ctl
     libevdev # for setting mouse dps
   ];
 
@@ -81,8 +82,11 @@
 
   programs.git = {
     enable = true;
-    userName = globals.user.gitUserName;
-    userEmail = globals.user.gitEmail;
+    settings.user = {
+      name = globals.user.gitUserName;
+      email = globals.user.gitEmail;
+    };
+    signing.format = null;
   };
 
   home.pointerCursor = {

@@ -8,7 +8,6 @@
     gnumake
     lm_sensors
     kdePackages.sddm-kcm
-    neofetch
     neovim
     rust-analyzer
     ripgrep
@@ -18,7 +17,7 @@
     openssl.dev
     pkg-config
     wget
-    xfce.thunar
+    thunar
     xdg-desktop-portal-gtk
     xdg-desktop-portal-wlr
     zip

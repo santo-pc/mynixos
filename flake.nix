@@ -2,13 +2,12 @@
   description = "NixOS configuration test";
 
   inputs = {
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs"; # Use system packages list where available
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprland.url = "github:hyprwm/Hyprland";

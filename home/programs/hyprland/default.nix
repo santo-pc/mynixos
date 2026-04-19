@@ -2,9 +2,9 @@
 let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.waybar}/bin/waybar &
-    ${pkgs.swww}/bin/swww-deamon &
+    ${pkgs.awww}/bin/awww-deamon &
     sleep 1
-    ${pkgs.swww}/bin/swww img ${./wallpaper.png} &
+    ${pkgs.awww}/bin/awww img ${./wallpaper.png} &
   '';
 in
 {
@@ -16,7 +16,7 @@ in
     enable = true;
 
     settings = {
-      exec-once = ''${startupScript}/bin/start'';
+      exec-once = "${startupScript}/bin/start";
     };
   };
 

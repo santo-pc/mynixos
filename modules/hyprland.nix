@@ -19,7 +19,7 @@
     hyprpaper
     libnotify
     mako
-    swww
+    awww
     wofi
     qt6.qtwayland
     swayidle

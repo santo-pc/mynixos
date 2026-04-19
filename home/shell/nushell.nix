@@ -69,7 +69,7 @@ in
 
       shellAliases = {
         # ll = "eza -l";
-        ls = "ls -la";
+        ls = "ls -a";
         k = "kubectl";
         vim = "neovim";
         kcontext-all = "kubectl config get-contexts";
