@@ -57,6 +57,7 @@
     elixir-ls
 
     # Utils
+    lazygit
     ripgrep
     fastfetch
     jq # A lightweight command-line JSON processor

@@ -30,10 +30,10 @@ window {
 }
 
 #text {
-  margin: 10px;
-  border: none;
-  color: #f8f8f2;
-} 
+  margin: 6px 10px;
+  font-family: monospace;
+  white-space: pre;
+}
 
 #entry.activatable #text {
   color: #282a36;

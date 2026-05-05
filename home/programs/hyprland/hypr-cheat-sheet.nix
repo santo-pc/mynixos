@@ -10,12 +10,11 @@ let
 in
 {
   options.programs.hypr-cheat-sheet = {
-    enable = lib.mkEnableOption "Hyprland cheat sheet using wofi";
+    enable = lib.mkEnableOption "Hyprland cheat sheet (enhanced UX)";
 
     hyprConfig = lib.mkOption {
       type = lib.types.str;
       default = "${config.home.homeDirectory}/.config/hypr/hyprland.conf";
-      description = "Path to hyprland.conf";
     };
   };
 
@@ -29,8 +28,10 @@ in
           gnugrep
           gawk
           gnused
+          coreutils
           hyprland
         ];
+
         text = ''
           HYPR_CONF="${cfg.hyprConfig}"
 
