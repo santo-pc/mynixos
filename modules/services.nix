@@ -13,10 +13,8 @@
       sddm = {
         wayland.enable = true;
         enable = true;
-        # theme = "corners";
-        # package = pkgs.lib.mkForce pkgs.libsForQt5.sddm;
-        # extraPackages = pkgs.lib.mkForce [ pkgs.libsForQt5.qt5.qtgraphicaleffects ];
-        theme = "${import ./sddm-theme.nix { inherit pkgs lib; }}";
+        theme = "corners";
+        # theme = "${import ./sddm-theme.nix { inherit pkgs lib; }}";
       };
     };
 

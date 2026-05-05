@@ -6,7 +6,7 @@
       recursive = true;
       source = builtins.fetchGit {
         url = "https://github.com/santo-pc/my-nvim-work.git";
-        rev = "a69f54c05f48fae8d9672ddaa581e5009cfb8caf";
+        rev = "ebe3395fe013918720244ae8e78c1f1abea45a13";
       };
     };
 

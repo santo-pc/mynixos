@@ -5,4 +5,8 @@
     ./nushell.nix
   ];
 
+  programs.atuin = {
+    enable = true;
+  };
+
 }
