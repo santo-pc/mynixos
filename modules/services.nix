@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  globals,
+  lib,
+  ...
+}:
 {
   programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.kdePackages.ksshaskpass.out}/bin/ksshaskpass";
 
@@ -11,7 +16,7 @@
 
     displayManager = {
       sddm = {
-        wayland.enable = true;
+        wayland.enable = false;
         enable = true;
         theme = "corners";
         # theme = "${import ./sddm-theme.nix { inherit pkgs lib; }}";

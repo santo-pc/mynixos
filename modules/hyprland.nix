@@ -11,22 +11,22 @@
   };
 
   environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSOS = 1;
+    WLR_NO_HARDWARE_CURSOS = "1";
     NIXOS_OZONE_WL = "1";
   };
+
 
   environment.systemPackages = with pkgs; [
     hyprpaper
     libnotify
     mako
-    awww
+    eww
     wofi
     qt6.qtwayland
     swayidle
     swaylock-effects
     wlogout
     wl-clipboard
-    wofi
     waybar
     nwg-look
   ];

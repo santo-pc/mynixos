@@ -1,6 +1,6 @@
 {
   networking = {
-    hostName = "nixos-personal";
+    hostName = "santiago-ws";
     networkmanager.enable = true;
   };
 }

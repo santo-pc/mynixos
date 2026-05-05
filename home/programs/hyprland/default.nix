@@ -10,8 +10,9 @@ in
 {
   imports = [
     ./hyprland-environment.nix
+    ./hypr-cheat-sheet.nix
   ];
-
+  programs.hypr-cheat-sheet.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
 

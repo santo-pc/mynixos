@@ -35,7 +35,7 @@
     in
     {
       nixosConfigurations = {
-        nixos-personal = lib.nixosSystem rec {
+        santiago-ws = lib.nixosSystem rec {
           inherit system;
 
           specialArgs = {
@@ -51,7 +51,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.san = import ./home/home.nix;
+              home-manager.users."${globals.user.username}" = import ./home/home.nix;
               home-manager.extraSpecialArgs = specialArgs;
               home-manager.backupFileExtension = "backup";
             }

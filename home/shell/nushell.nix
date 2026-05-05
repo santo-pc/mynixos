@@ -1,6 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
   zoxideInit = pkgs.zoxide;
+  homeDir = config.home.homeDirectory;
 in
 {
 
@@ -17,11 +18,12 @@ in
       configFile.text = ''
         source ~/.zoxide.nu
         $env.config.edit_mode = "vi"
-        $env.PROMPT_INDICATOR_VI_NORMAL = "/V/ "
-        $env.PROMPT_INDICATOR_VI_INSERT = "/I/ "
-
+        $env.PROMPT_INDICATOR = ""
+        $env.PROMPT_INDICATOR_VI_INSERT = " "
+        $env.PROMPT_INDICATOR_VI_NORMAL = " "
+        $env.PROMPT_MULTILINE_INDICATOR = "::: "
         def oidea [] {
-           fd . '$env.HOME/programming/repository' --type d --hidden --exclude .git  --max-depth 1 -a 
+           fd . '${homeDir}/programming/repository' --type d --hidden --exclude .git  --max-depth 1 -a 
            | fzf 
            | lines  
            | get 0 
@@ -74,8 +76,10 @@ in
         vim = "neovim";
         kcontext-all = "kubectl config get-contexts";
         kcontext-current = "kubectl config current-context";
-        mnix-rebuild = "nix run nix-darwin -- switch --flake $env.HOME/mynixos/ --show-trace";
-        mnix-update = "sh $env.HOME/mynixos/scripts/update-system.sh";
+
+        ## same but uses 1password to get sudo access
+        x-up-1p = "sh ${homeDir}/bin/nix-update-1p.sh";
+        x-build-1p = "sh ${homeDir}/bin/nix-build-1p.sh";
       };
 
     };
@@ -85,19 +89,35 @@ in
 
     starship = {
       enable = true;
+      enableNushellIntegration = true;
       settings = {
         add_newline = true;
         aws = {
           disabled = true;
         };
-        character = {
+
+        character = { };
+
+        shell = {
+          style = "white dimmed";
+          fish_indicator = "󰈺 ";
+          powershell_indicator = "_";
+          unknown_indicator = "mystery shell";
+          # style = "cyan bold";
+          nu_indicator = "󰫻󰬂";
+          zsh_indicator = "󰬇󱎤󰫵";
+          disabled = false;
         };
+
+        directory = {
+          truncate_to_repo = false;
+        };
+
         format = ''
-          $directory$git_branch
-          $shell$character
+          $kubernetes$directory$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$docker_context$cmd_duration$fill$shell
+          $character
         '';
       };
     };
   };
-
 }

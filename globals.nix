@@ -1,8 +1,17 @@
-{
+let
   user = {
-    gitUserName = "santo";
+    host = "santiago-ws";
+    username = "san";
+    password-1p-item = "personal-nix";
+    homeDirectory = "/home/san";
+    nixConfigDirectory = "/home/san/mynixos";
+    # git
+    gitUserName = "santiago palacio";
     gitEmail = "sapalacio2@gmail.com";
-    homeDirectory = /home/san;
-    nixConfigDirectory = /home/san/mynixos;
   };
+in
+{
+  inherit
+    user
+    ;
 }

@@ -15,13 +15,14 @@
     ./shell
     ./java.nix
     ./tmux
+    ./scripts
+    ./1password
   ];
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # DEV
     # jetbrains.idea-ultimate
-    # jetbrains.idea-community
     pkgs-unstable.neovim
     kitty
     vscode
@@ -74,6 +75,7 @@
     p7zip
     gh # xgithub ctl
     libevdev # for setting mouse dps
+    cliphist
   ];
 
   programs.firefox = {

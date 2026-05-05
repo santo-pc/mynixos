@@ -4,9 +4,9 @@
     ".config/nvim" = {
       enable = true;
       recursive = true;
-      source = builtins.fetchGit {
+      source = fetchGit {
         url = "https://github.com/santo-pc/my-nvim-work.git";
-        rev = "ebe3395fe013918720244ae8e78c1f1abea45a13";
+        rev = "1c8be2d9b08e18a2031aeb26d9c535f444a8acb2";
       };
     };
 
