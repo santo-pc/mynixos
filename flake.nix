@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -17,20 +16,33 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # niri = {
+    #   url = "github:sodiboo/niri-flake";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs =
     {
       nixpkgs,
-      nixpkgs-unstable,
       home-manager,
       hyprland,
+      noctalia,
       ...
     }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
-      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+      pkgs-unstable = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
       globals = import ./globals.nix;
     in
     {
@@ -43,6 +55,7 @@
             inherit hyprland;
             inherit inputs;
             inherit globals;
+            inherit noctalia;
           };
 
           modules = [
@@ -54,6 +67,11 @@
               home-manager.users."${globals.user.username}" = import ./home/home.nix;
               home-manager.extraSpecialArgs = specialArgs;
               home-manager.backupFileExtension = "backup";
+              home-manager.sharedModules = [
+                # vicinae.homeManagerModules.default
+                noctalia.homeModules.default
+                # nix-colors.homeManagerModules.default
+              ];
             }
           ];
 

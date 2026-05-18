@@ -1,7 +1,5 @@
 {
   pkgs,
-  globals,
-  lib,
   ...
 }:
 {
@@ -13,13 +11,16 @@
     openssh.enable = true;
     spice-vdagentd.enable = true;
     blueman.enable = true;
-
     displayManager = {
+      defaultSession = "niri";
       sddm = {
-        wayland.enable = false;
         enable = true;
-        theme = "corners";
-        # theme = "${import ./sddm-theme.nix { inherit pkgs lib; }}";
+        wayland = {
+          compositor = "kwin";
+
+        };
+
+        theme = "catppuccin-mocha-mauve";
       };
     };
 
@@ -33,4 +34,13 @@
       gnome.enable = true;
     };
   };
+
+  environment.systemPackages = [
+    (pkgs.catppuccin-sddm.override {
+      flavor = "mocha";
+      accent = "mauve";
+    })
+  ];
+
+  programs.niri.enable = true; # Niri session in the display manager
 }

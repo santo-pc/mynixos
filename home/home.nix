@@ -77,6 +77,7 @@
     gh # xgithub ctl
     libevdev # for setting mouse dps
     cliphist
+    gemini-cli
   ];
 
   programs.firefox = {

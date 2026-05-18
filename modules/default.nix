@@ -13,5 +13,6 @@
     ./users.nix
     ./virtualisation.nix
     ./1password.nix
+    # ./niri.nix
   ];
 }
